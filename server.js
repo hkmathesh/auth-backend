@@ -16,7 +16,14 @@ app.get('/', (req, res) => {
 connectDB();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    'https://auth-frontend-piwm.onrender.com'
+  ],
+  credentials: true
+}));
+
 app.use(express.json());
 
 // Routes
