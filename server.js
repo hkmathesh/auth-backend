@@ -7,6 +7,11 @@ const authRoutes = require('./routes/auth');
 
 const app = express();
 
+// Root route
+app.get('/', (req, res) => {
+  res.send('API is running...');
+});
+
 // Connect to DB
 connectDB();
 
